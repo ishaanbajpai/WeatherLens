@@ -79,4 +79,4 @@ function fetchLatLong(lat, long) {
         })
         .then((data) => this.displayWeather(data));
 }
-weather.fetchWeather("Chandigarh");
+weather.fetchWeather("New Delhi");
