@@ -1,6 +1,6 @@
 var lat, long;
 let weather = {
-    apiKey: '09ace9fd65255e26f0fa3f969d6a0004',
+    apiKey: 'YOUR_API_KEY',
     fetchWeather: function(city) {
         fetch("http://api.openweathermap.org/data/2.5/weather?q=" +
                 city + "&units=metric&appid=" + this.apiKey)
@@ -67,7 +67,7 @@ function showPosition(position) {
 }
 
 function fetchLatLong(lat, long) {
-    var apiKey = '09ace9fd65255e26f0fa3f969d6a0004';
+    var apiKey = 'YOUR_API_KEY';
     fetch("api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=" + apiKey)
         .then((response) => {
             if (!response.ok) {
