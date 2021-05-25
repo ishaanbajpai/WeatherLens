@@ -68,15 +68,15 @@ function showPosition(position) {
 
 function fetchLatLong(lat, long) {
     var apiKey = '09ace9fd65255e26f0fa3f969d6a0004';
-    fetch("api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=" + apiKey)
+    fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&units=metric&appid=" + apiKey)
         .then((response) => {
             if (!response.ok) {
                 alert("No weather found.");
-                throw new Error("No weather found.");
+                throw new Error("Location not supported");
             }
             //console.log("this is working");
             return response.json();
         })
-        .then((data) => this.displayWeather(data));
+        .then((data) => weather.displayWeather(data));
 }
-weather.fetchWeather("New Delhi");
+getLocation();
